@@ -2,24 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    private String name;
+    private String title;
     private String author;
     private BookCategory category;
     private List<BookCopy> copies;
     
-    public Book(String name, String author, BookCategory category) {
-        this.name = name;
+    public Book(String title, String author, BookCategory category) {
+        this.title = title;
         this.author = author;
         this.category = category;
         this.copies = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {

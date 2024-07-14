@@ -1,6 +1,5 @@
 public class main {
     public static void main(String[] args) {
-        // Criação de categorias
         BookCategory fiction = new BookCategory("Fiction");
         BookCategory fantasy = new BookCategory("Fantasy");
         BookCategory nonFiction = new BookCategory("Non-Fiction");
@@ -24,7 +23,7 @@ public class main {
             System.out.println("  Subcategory: " + subcategory.getCategory());
             if (subcategory instanceof BookCategory) {
                 for (Book book : ((BookCategory) subcategory).getBooks()) {
-                    System.out.println("    Book: " + book.getName() + " by " + book.getAuthor());
+                    System.out.println("    Book: " + book.getTitle() + " by " + book.getAuthor());
                     for (BookCopy copy : book.getCopies()) {
                         System.out.println("      Copy ID: " + copy.getCopyID() + " - Available: " + copy.isAvailable());
                     }
