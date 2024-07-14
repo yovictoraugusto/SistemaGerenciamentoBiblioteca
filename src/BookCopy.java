@@ -1,9 +1,10 @@
 public class BookCopy {
-    private Integer copyID;
+    private String copyID;
     private boolean isAvailable;
 
-    public BookCopy(Integer copyID) {
+    public BookCopy(String copyID) {
         this.copyID = copyID;
+        this.isAvailable = true;
     }
 
     public boolean isAvailable() {
@@ -14,7 +15,7 @@ public class BookCopy {
         this.isAvailable = isAvailable;
     }
 
-    public Integer getCopyID() {
+    public String getCopyID() {
         return copyID;
     }
 }
