@@ -7,7 +7,7 @@ public class SingletonDB {
     private SingletonDB(){}
     public static SingletonDB instance;
     public ArrayList<Book> books = new ArrayList<Book>();
-    public ArrayList<Category> categories = new ArrayList<Category>();
+    //public ArrayList<Category> categories = new ArrayList<Category>();
     public ArrayList<User> users = new ArrayList<User>();
 
     public static SingletonDB getInstance(){
@@ -22,11 +22,11 @@ public class SingletonDB {
         else {return false;}
     }
 
-    public boolean AddCategory(Category category){
-        if(this.categories.add(category))
-        {return true;}
-        else {return false;}
-    }
+    // public boolean AddCategory(Category category){
+    //     if(this.categories.add(category))
+    //     {return true;}
+    //     else {return false;}
+    // }
 
     public boolean AddUser(User user){
         if(this.users.add(user))
@@ -36,7 +36,7 @@ public class SingletonDB {
 
     
     @SuppressWarnings("unlikely-arg-type")
-    public Object searchBook(Optional<String> title, Optional<String> author, Optional<String> category){
+    public Object searchBook(String title, Optional<String> author, Optional<String> category){
         List<Book> PossibleBooks = new ArrayList<Book>();
         Optional<Book> book;
         if(title != null){
