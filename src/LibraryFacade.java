@@ -1,29 +1,31 @@
-import java.util.List;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Optional;
 
 public class LibraryFacade {
     SingletonDB DB = SingletonDB.getInstance();
+    Library LB = new Library();
     // Register new User
     // Consultar informações de livros 
     // Devolução de livros
     // Consultar informações sobre o usuários
     // Busca por livro (implementado em SingletonDB)
 
-    public void LoanBook(String Title){
-        Book book = (Book) DB.searchBook(Title, null, null);
-        List<BookCopy> books = book.getCopies();
+    public void LoanBook(String title){
+        LB.LoanBook(Optional.of(title));
+    }
 
-        Stream <BookCopy> streamBook = books.stream();
-        BookCopy availableBook = (BookCopy) streamBook.filter(bookcopy -> bookcopy.isAvailable() == true);
+    public void ReturnBook(BookCopy bk){
+        LB.returnBook(bk);
+    }
 
-        if(availableBook != null){
-            availableBook.setReturnDate();
-            System.out.println("Loan Approved!\n Return Date:" + availableBook.getReturnDate());
+    public Object searchBook(String title, Optional<String> author, Optional<String> category){
+        if(title != null){
+            Book bk = (Book) DB.searchBook(Optional.of(title), null, null);
+            return bk;
         }
-        else{
-            System.out.println("Loan not approved! :( ");
-        }
-
+        @SuppressWarnings("unchecked")
+        ArrayList<Book> bks = (ArrayList<Book>) DB.searchBook(Optional.of(title), author, category);
+        return bks;
     }
 
 }

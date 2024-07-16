@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SingletonDB {
     private SingletonDB(){}
@@ -36,24 +37,30 @@ public class SingletonDB {
 
     
     @SuppressWarnings("unlikely-arg-type")
-    public Object searchBook(String title, Optional<String> author, Optional<String> category){
+    public Object searchBook(Optional<String> title, Optional<String> author, Optional<String> category){
         List<Book> PossibleBooks = new ArrayList<Book>();
         Optional<Book> book;
         if(title != null){
             book = books.stream()
                             .filter(item -> item.getTitle().equals(title))
-                                .findFirst();
+                            .findFirst();
             return book;
         }
         if(author != null){
             PossibleBooks = books.stream()
                                     .filter(item -> item.getAuthor().equals(author))
+                                    .collect(Collectors.toList());
+            if(category != null){
+                PossibleBooks = PossibleBooks.stream()
+                                        .filter(item -> item.getCategory().equals(category))
                                         .collect(Collectors.toList());
+                return PossibleBooks;
+            }
         }
         if(category != null){
             PossibleBooks = books.stream()
                                     .filter(item -> item.getCategory().equals(category))
-                                        .collect(Collectors.toList());
+                                    .collect(Collectors.toList());
         }
 
         return PossibleBooks;
