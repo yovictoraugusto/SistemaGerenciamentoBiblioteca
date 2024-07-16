@@ -59,6 +59,4 @@ public class Book {
         return getAvailableCopy() != null; //Há pelo menos uma cópia disponível
     }
 
-
-    
 }
