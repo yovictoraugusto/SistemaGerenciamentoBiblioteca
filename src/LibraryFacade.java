@@ -18,13 +18,13 @@ public class LibraryFacade {
         LB.returnBook(bk);
     }
 
-    public Object searchBook(String title, Optional<String> author, Optional<String> category){
+    public Object searchBook(String title, String author, String category){
         if(title != null){
             Book bk = (Book) DB.searchBook(Optional.of(title), null, null);
             return bk;
         }
-        @SuppressWarnings("unchecked")
-        ArrayList<Book> bks = (ArrayList<Book>) DB.searchBook(Optional.of(title), author, category);
+        
+        ArrayList bks = (ArrayList) DB.searchBook(Optional.ofNullable(title), Optional.ofNullable(author), Optional.ofNullable(category));
         return bks;
     }
 
