@@ -1,36 +1,43 @@
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
+
 
 public class Library {
-    SingletonDB DB = SingletonDB.getInstance();
+    private SingletonDB DB = SingletonDB.getInstance();
 
-    public BookCopy LoanBook(Optional<String> Title)
+    public BookCopy loanBook(String Title, String nCelular)
     {
-        Book book = (Book) DB.searchBook(Title, null, null);
-        List<BookCopy> books = book.getCopies();
+        User user = DB.searchUser(nCelular);
+        UserEligibiltyHandler EligibilityHandler = new UserEligibiltyHandler(); 
 
-        Stream <BookCopy> streamBook = books.stream();
-        BookCopy availableBook = (BookCopy) streamBook.filter(bookcopy -> bookcopy.isAvailable() == true);
+        if(EligibilityHandler.verifyUser(user))
+        {
+            Book book = (Book) DB.searchBook(Optional.of(Title), null, null);
+            BookAvailabilityHandler AvailabilityHandler = new BookAvailabilityHandler();
+            BookCopy availableBook = AvailabilityHandler.verifyBook(book);
 
-        if(availableBook != null){
+            if(availableBook != null)
+            {
                 availableBook.setReturnDate();
                 System.out.println("Loan Approved!\n Return Date:" + availableBook.getReturnDate());
                 return availableBook;
+            }
+
         }
         System.out.println("Loan not Approved! :(");
         return null;
-       
+    
     }
 
     
 
-    public void returnBook(BookCopy bk){
-        if (bk != null){
+    public boolean returnBook(BookCopy bk){
+        if (bk != null)
+        {
         bk.setAvailable();
         System.out.println("Book Returned");
+        return true;
         }
-        else{System.out.println("Book invalid");}
+        else{System.out.println("Book invalid"); return false;}
 
     }
 }

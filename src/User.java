@@ -17,6 +17,10 @@ public class User {
 
     public String getCelular(){return this.celular;}
 
+    public Integer getLoanedQuantity(){
+        return this.loanedBookCopies.size();
+    }
+
     public void readNotifications(){
         for (String notification : notifications){
             System.out.println(notification);

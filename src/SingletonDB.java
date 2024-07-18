@@ -2,14 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class SingletonDB {
     private SingletonDB(){}
-    public static SingletonDB instance;
-    public ArrayList<Book> books = new ArrayList<Book>();
+    private static SingletonDB instance;
+    private ArrayList<Book> books = new ArrayList<Book>();
     //public ArrayList<Category> categories = new ArrayList<Category>();
-    public ArrayList<User> users = new ArrayList<User>();
+    private ArrayList<User> users = new ArrayList<User>();
 
     public static SingletonDB getInstance(){
         if (instance == null)
@@ -66,13 +65,16 @@ public class SingletonDB {
         return PossibleBooks;
     }
 
-    public Optional<User> searchUser(String nCelular){
-        Optional<User> user;
+    public User searchUser(String nCelular){
+        User user;
         user = users.stream()
                             .filter(item -> item.getCelular().equals(nCelular))
-                            .findFirst();
+                            .findFirst().orElse(null);
         return user;
-
+    }
+    
+    public ArrayList<User> getUsers(){
+        return this.users;
     }
 }
 
