@@ -1,6 +1,8 @@
 
 public class ExternalCatalogAdapter implements ExternalCatalog {
-    private ExternalSystemApi externalSistem;
+    private ExternalSystemApi externalSistem = new ExternalSystemApi();
+
+    public ExternalCatalogAdapter() {}
 
     @Override
     public String searchBooksByTitle(String title){
