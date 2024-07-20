@@ -7,7 +7,7 @@ public class BookAvailabilityNotifier {
     public void setNotification(String message){
         ArrayList<User> users = DB.getUsers();
         for (User user: users){
-            user.notifications.add(message);
+            user.boxNotifications.add(message);
         }
 
         System.out.println("New Notification to All Users!");

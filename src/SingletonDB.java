@@ -1,15 +1,13 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.Arrays;
+
 
 public class SingletonDB {
     SingletonDB(){}
     private static SingletonDB instance;
     private ArrayList<Book> books = new ArrayList<Book>();
-    //public ArrayList<Category> categories = new ArrayList<Category>();
+    public ArrayList<BookCategory> categories = new ArrayList<BookCategory>();
     private ArrayList<User> users = new ArrayList<User>();
 
     public static SingletonDB getInstance(){
@@ -24,13 +22,13 @@ public class SingletonDB {
         else {return false;}
     }
 
-    // public boolean AddCategory(Category category){
-    //     if(this.categories.add(category))
-    //     {return true;}
-    //     else {return false;}
-    // }
+    public boolean addCategory(BookCategory category){
+        if(this.categories.add(category))
+        {return true;}
+        else {return false;}
+    }
 
-    public boolean AddUser(User user){
+    public boolean addUser(User user){
         if(this.users.add(user))
         {return true;}
         else {return false;}
@@ -63,7 +61,7 @@ public class SingletonDB {
         if(category.isPresent())
         {
             PossibleBooks = (ArrayList<Book>) this.books.stream()
-                            .filter(item -> item.getCategory().equals(categoryString))
+                            .filter(item -> item.getCategory().getCategory().equals(categoryString))
                             .collect(Collectors.toList());
         }
 

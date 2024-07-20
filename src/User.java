@@ -4,14 +4,14 @@ public class User {
     public String name;
     public String email;
     public String celular;
-    public ArrayList<String> notifications;
+    public ArrayList<String> boxNotifications;
     public ArrayList<BookCopy> loanedBookCopies;
 
     public User(String name, String email, String celular){
         this.name = name;
         this.email = email;
         this.celular = celular;
-        this.notifications = new ArrayList<String>();
+        this.boxNotifications = new ArrayList<String>();
         this.loanedBookCopies = new ArrayList<BookCopy>();
     }
 
@@ -22,7 +22,7 @@ public class User {
     }
 
     public void readNotifications(){
-        for (String notification : notifications){
+        for (String notification : boxNotifications){
             System.out.println(notification);
         }
     }
