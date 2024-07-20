@@ -12,7 +12,4 @@ public class BookAvailabilityNotifier {
 
         System.out.println("New Notification to All Users!");
     }
-
-
-
 }
