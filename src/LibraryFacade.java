@@ -37,7 +37,7 @@ public class LibraryFacade {
         if(bk != null){
             BookAvailabilityNotifier notifier = new BookAvailabilityNotifier();
             DB.addBook(bk);
-             notifier.setNotification("New Book!\n" + bk.getTitle());
+            notifier.setNotification("New Book!\n" + bk.getTitle());
             return true;
         }
         return false;

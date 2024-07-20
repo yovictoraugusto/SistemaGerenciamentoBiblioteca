@@ -56,7 +56,7 @@ public class Book {
     }
 
     public boolean isAvailable(){
-        return getAvailableCopy() != null; //Há pelo menos uma cópia disponível
+        return getAvailableCopy() != null;
     }
 
 }

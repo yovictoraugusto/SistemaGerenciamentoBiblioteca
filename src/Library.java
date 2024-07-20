@@ -24,9 +24,7 @@ public class Library {
             }
         }
         return null;
-    }
-
-    
+    }   
 
     public boolean returnBook(BookCopy bk){
         if (bk != null){

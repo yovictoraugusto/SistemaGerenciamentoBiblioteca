@@ -13,8 +13,8 @@ public class main {
         Book lotr = new Book("The Lord of the Rings", "J.R.R. Tolkien", fantasy);
         Book sapiens = new Book("Sapiens", "Yuval Noah Harari", history);
 
-        // lotr.addCopy(new BookCopy("LOTR-1"));
-        // lotr.addCopy(new BookCopy("LOTR-2"));
+        // lotr.addCopy(new BookCopy("LOTR-1", lotr.getTitle())));
+        // lotr.addCopy(new BookCopy("LOTR-2", lotr.getTitle()));
         // sapiens.addCopy(new BookCopy("SAPIENS-1"));
 
         // fantasy.addBook(lotr);

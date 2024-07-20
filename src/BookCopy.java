@@ -4,10 +4,16 @@ public class BookCopy {
     private String copyID;
     private boolean isAvailable;
     private LocalDate returnDate;
+    private String title;
 
-    public BookCopy(String copyID) {
+    public BookCopy(String copyID, String title) {
         this.copyID = copyID;
-        this.isAvailable = true; 
+        this.isAvailable = true;
+        this.title = title;
+    }
+
+    public String getTitle(){
+        return title;
     }
 
     public boolean isAvailable() {

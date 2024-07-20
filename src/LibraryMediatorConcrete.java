@@ -3,6 +3,8 @@ import java.util.Optional;
 public class LibraryMediatorConcrete implements LibraryMediator {
     SingletonDB DB = SingletonDB.getInstance();
     Library LB = new Library();
+    BookAvailabilityNotifier notifier = new BookAvailabilityNotifier();
+
     // Coordena busca
     @Override
     public Object CoordinateSearch(Optional<String> title, Optional<String> author, Optional<String> category) {
@@ -22,6 +24,7 @@ public class LibraryMediatorConcrete implements LibraryMediator {
         if(availableBook != null){
             System.out.println("Loan Approved!\n Return Date:" 
             + availableBook.getReturnDate());
+            notifier.setNotification("Is unavailable!\nBook:" + availableBook.getTitle() + "\tCopy: " + availableBook.getCopyID());
         }else{
             System.out.println("Loan not Approved! :(");
         }
@@ -34,6 +37,7 @@ public class LibraryMediatorConcrete implements LibraryMediator {
         boolean returnStatus = LB.returnBook(bk);
         if(returnStatus == true){
             System.out.println("Book Returned");
+            notifier.setNotification("Is available!\nBook:" + bk.getTitle() + "\tCopy: " + bk.getCopyID());
         }else{
             System.out.println("Book invalid");
         }   
