@@ -7,7 +7,7 @@ public class SingletonDB {
     SingletonDB(){}
     private static SingletonDB instance;
     private ArrayList<Book> books = new ArrayList<Book>();
-    public ArrayList<BookCategory> categories = new ArrayList<BookCategory>();
+    private ArrayList<BookCategory> categories = new ArrayList<BookCategory>();
     private ArrayList<User> users = new ArrayList<User>();
 
     public static SingletonDB getInstance(){
