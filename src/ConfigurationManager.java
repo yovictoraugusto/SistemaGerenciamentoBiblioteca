@@ -1,6 +1,14 @@
 public class ConfigurationManager {
-    // Conexão com BD
-    // Detalhes de integração com sistemas externo
-    // Configurações de notificações
-    // Parâmetros de segurança    
+    private static ConfigurationManager instance;
+
+    public static ConfigurationManager getInstance() {
+        if (instance == null) {
+            instance = new ConfigurationManager();
+        }
+        return instance;
+    }
+
+    // Database connection information
+    // Integration details with external systems
+    // Security parameters 
 }
