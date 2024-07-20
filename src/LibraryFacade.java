@@ -24,12 +24,33 @@ public class LibraryFacade {
             return bk;
         }
         
-        ArrayList bks = (ArrayList) DB.searchBook(Optional.ofNullable(title), Optional.ofNullable(author), Optional.ofNullable(category));
+        @SuppressWarnings("unchecked")
+        ArrayList<Book> bks = (ArrayList<Book>) DB.searchBook(Optional.ofNullable(title), Optional.ofNullable(author), Optional.ofNullable(category));
         return bks;
     }
 
     public User searchUser(String nCelular){
         return DB.searchUser(nCelular);
+    }
+
+    public boolean addBook(Book bk){
+        if(bk != null){
+            BookAvailabilityNotifier notifier = new BookAvailabilityNotifier();
+            DB.addBook(bk);
+             notifier.setNotification("New Book!\n" + bk.getTitle());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean registerUser(User user){
+        if(user != null){DB.addUser(user); return true;}
+        return false;
+    }
+
+    public boolean addCategory(BookCategory bCategory){
+        if(bCategory != null){DB.addCategory(bCategory); return true;}
+        return false;
     }
 
 }
