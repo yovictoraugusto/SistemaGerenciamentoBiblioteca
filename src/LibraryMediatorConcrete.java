@@ -22,8 +22,7 @@ public class LibraryMediatorConcrete implements LibraryMediator {
     public BookCopy CoordinateLoan(String title, String nCelular) {
         BookCopy availableBook =  LB.loanBook(title, nCelular);
         if(availableBook != null){
-            System.out.println("Loan Approved!\n Return Date:" 
-            + availableBook.getReturnDate());
+            System.out.println("Loan Approved!\n Return Date:" + availableBook.getReturnDate());
             notifier.setNotification("Is unavailable!\nBook:" + availableBook.getTitle() + "\tCopy: " + availableBook.getCopyID());
         }else{
             System.out.println("Loan not Approved! :(");
