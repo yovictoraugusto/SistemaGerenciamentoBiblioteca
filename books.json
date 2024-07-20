@@ -1,0 +1,280 @@
+{
+    "books": [
+      {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "category": "Classic"
+      },
+      {
+        "title": "1984",
+        "author": "George Orwell",
+        "category": "Dystopian"
+      },
+      {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "category": "Romance"
+      },
+      {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "category": "Classic"
+      },
+      {
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "category": "Adventure"
+      },
+      {
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "category": "Historical"
+      },
+      {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "category": "Classic"
+      },
+      {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "category": "Fantasy"
+      },
+      {
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "category": "Psychological"
+      },
+      {
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "category": "Dystopian"
+      },
+      {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "category": "Fantasy"
+      },
+      {
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "category": "Classic"
+      },
+      {
+        "title": "Wuthering Heights",
+        "author": "Emily Brontë",
+        "category": "Gothic"
+      },
+      {
+        "title": "Great Expectations",
+        "author": "Charles Dickens",
+        "category": "Classic"
+      },
+      {
+        "title": "The Odyssey",
+        "author": "Homer",
+        "category": "Epic"
+      },
+      {
+        "title": "The Iliad",
+        "author": "Homer",
+        "category": "Epic"
+      },
+      {
+        "title": "Frankenstein",
+        "author": "Mary Shelley",
+        "category": "Horror"
+      },
+      {
+        "title": "Dracula",
+        "author": "Bram Stoker",
+        "category": "Horror"
+      },
+      {
+        "title": "The Brothers Karamazov",
+        "author": "Fyodor Dostoevsky",
+        "category": "Philosophical"
+      },
+      {
+        "title": "Anna Karenina",
+        "author": "Leo Tolstoy",
+        "category": "Classic"
+      },
+      {
+        "title": "Don Quixote",
+        "author": "Miguel de Cervantes",
+        "category": "Adventure"
+      },
+      {
+        "title": "One Hundred Years of Solitude",
+        "author": "Gabriel Garcia Marquez",
+        "category": "Magical Realism"
+      },
+      {
+        "title": "The Catch-22",
+        "author": "Joseph Heller",
+        "category": "Satire"
+      },
+      {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "category": "Adventure"
+      },
+      {
+        "title": "The Divine Comedy",
+        "author": "Dante Alighieri",
+        "category": "Epic"
+      },
+      {
+        "title": "Les Misérables",
+        "author": "Victor Hugo",
+        "category": "Historical"
+      },
+      {
+        "title": "The Count of Monte Cristo",
+        "author": "Alexandre Dumas",
+        "category": "Adventure"
+      },
+      {
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "category": "Dystopian"
+      },
+      {
+        "title": "The Picture of Dorian Gray",
+        "author": "Oscar Wilde",
+        "category": "Philosophical"
+      },
+      {
+        "title": "The Stranger",
+        "author": "Albert Camus",
+        "category": "Philosophical"
+      },
+      {
+        "title": "A Tale of Two Cities",
+        "author": "Charles Dickens",
+        "category": "Historical"
+      },
+      {
+        "title": "Gulliver's Travels",
+        "author": "Jonathan Swift",
+        "category": "Satire"
+      },
+      {
+        "title": "Heart of Darkness",
+        "author": "Joseph Conrad",
+        "category": "Classic"
+      },
+      {
+        "title": "Lolita",
+        "author": "Vladimir Nabokov",
+        "category": "Classic"
+      },
+      {
+        "title": "The Metamorphosis",
+        "author": "Franz Kafka",
+        "category": "Fantasy"
+      },
+      {
+        "title": "The Sun Also Rises",
+        "author": "Ernest Hemingway",
+        "category": "Classic"
+      },
+      {
+        "title": "The Old Man and the Sea",
+        "author": "Ernest Hemingway",
+        "category": "Classic"
+      },
+      {
+        "title": "Slaughterhouse-Five",
+        "author": "Kurt Vonnegut",
+        "category": "Science Fiction"
+      },
+      {
+        "title": "Beloved",
+        "author": "Toni Morrison",
+        "category": "Historical"
+      },
+      {
+        "title": "Invisible Man",
+        "author": "Ralph Ellison",
+        "category": "Classic"
+      },
+      {
+        "title": "Things Fall Apart",
+        "author": "Chinua Achebe",
+        "category": "Historical"
+      },
+      {
+        "title": "Ulysses",
+        "author": "James Joyce",
+        "category": "Modernist"
+      },
+      {
+        "title": "The Grapes of Wrath",
+        "author": "John Steinbeck",
+        "category": "Classic"
+      },
+      {
+        "title": "The Sound and the Fury",
+        "author": "William Faulkner",
+        "category": "Classic"
+      },
+      {
+        "title": "East of Eden",
+        "author": "John Steinbeck",
+        "category": "Classic"
+      },
+      {
+        "title": "On the Road",
+        "author": "Jack Kerouac",
+        "category": "Beat"
+      },
+      {
+        "title": "Catch-22",
+        "author": "Joseph Heller",
+        "category": "Satire"
+      },
+      {
+        "title": "The Bell Jar",
+        "author": "Sylvia Plath",
+        "category": "Autobiographical"
+      },
+      {
+        "title": "The Kite Runner",
+        "author": "Khaled Hosseini",
+        "category": "Historical"
+      },
+      {
+        "title": "Life of Pi",
+        "author": "Yann Martel",
+        "category": "Adventure"
+      },
+      {
+        "title": "The Road",
+        "author": "Cormac McCarthy",
+        "category": "Dystopian"
+      },
+      {
+        "title": "Gone with the Wind",
+        "author": "Margaret Mitchell",
+        "category": "Historical"
+      },
+      {
+        "title": "The Secret Garden",
+        "author": "Frances Hodgson Burnett",
+        "category": "Children"
+      },
+      {
+        "title": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
+        "category": "Fantasy"
+      },
+      {
+        "title": "Charlotte's Web",
+        "author": "E.B. White",
+        "category": "Children"
+      }
+    ]
+  }
+  
