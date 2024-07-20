@@ -7,7 +7,7 @@ public class LibraryMediatorConcrete implements LibraryMediator {
 
     // Coordena busca
     @Override
-    public Object CoordinateSearch(Optional<String> title, Optional<String> author, Optional<String> category) {
+    public Object CoordinateSearchBook(Optional<String> title, Optional<String> author, Optional<String> category) {
         Object booksSearch = DB.searchBook(title, author, category);
         if(booksSearch != null){
             System.out.println("Book found!");
@@ -41,5 +41,29 @@ public class LibraryMediatorConcrete implements LibraryMediator {
             System.out.println("Book invalid");
         }   
     }
-    
+
+    @Override
+    public User CoordinateSearchUser(String nCelular) {
+        return DB.searchUser(nCelular);
+    }
+
+    @Override
+    public void CoordinateAddBook(Book bk) {
+        boolean returnDB = DB.addBook(bk);
+        if(returnDB == true){notifier.setNotification("New Book!\n" + bk.getTitle());}
+    }
+
+    @Override
+    public void CoordinateRegisterUser(User user) {
+        boolean returnDB =  DB.addUser(user);
+        if(returnDB == true){System.out.println("User added successfully");}
+        else{System.out.println("User not added");}
+    }
+
+    @Override
+    public void CoordinateAddCategory(BookCategory bCategory) {
+        boolean returnDB = DB.addCategory(bCategory);
+        if(returnDB == true){System.out.println("Category added successfully");}
+        else{System.out.println("Category not added");}
+    }
 }
