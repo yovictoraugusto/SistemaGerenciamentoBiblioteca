@@ -9,15 +9,15 @@ public class LoanLimitHandler{
     }
 
     public void setStudentUser(Integer n){
-        this.comum_user = n;
+        this.student_user = n;
     }
 
     public void setTeacherUser(Integer n){
-        comum_user = n;
+        this.teacher_user = n;
     }
 
     public void setEmployeeUser(Integer n){
-        comum_user = n;
+        this.employee_user = n;
     }
 
     public Integer getComumUser(){
