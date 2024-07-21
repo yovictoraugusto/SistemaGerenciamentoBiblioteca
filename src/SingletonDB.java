@@ -7,7 +7,7 @@ public class SingletonDB {
     SingletonDB(){}
     private static SingletonDB instance;
     private ArrayList<Book> books = new ArrayList<Book>();
-    private ArrayList<BookCategory> categories = new ArrayList<BookCategory>();
+    public ArrayList<BookCategory> categories = new ArrayList<BookCategory>();
     private ArrayList<User> users = new ArrayList<User>();
 
     public static SingletonDB getInstance(){
@@ -87,6 +87,13 @@ public class SingletonDB {
     
     public ArrayList<User> getUsers()
     {return this.users;}
+
+    public BookCategory getBookCategories(String categoryName){
+        BookCategory category = this.categories.stream()
+                        .filter(item -> item.getCategory().equals(categoryName))
+                        .findFirst().orElse(null);
+            return category;
+    } 
 }
 
 

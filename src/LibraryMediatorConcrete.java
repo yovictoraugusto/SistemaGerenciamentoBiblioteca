@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class LibraryMediatorConcrete implements LibraryMediator {
@@ -8,7 +9,13 @@ public class LibraryMediatorConcrete implements LibraryMediator {
     // Coordena busca
     @Override
     public Object CoordinateSearchBook(Optional<String> title, Optional<String> author, Optional<String> category) {
-        Object booksSearch = DB.searchBook(title, author, category);
+
+        if(title.isPresent()){
+            Book book = (Book) DB.searchBook(title,Optional.empty(), Optional.empty());
+            if (book != null){System.out.println("Book found!"); return book;}
+        }
+
+        ArrayList<Book> booksSearch = (ArrayList<Book>) DB.searchBook(title, author, category);
         if(booksSearch != null){
             System.out.println("Book found!");
             return booksSearch;

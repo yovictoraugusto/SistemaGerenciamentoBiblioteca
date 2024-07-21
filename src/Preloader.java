@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator; 
 import java.util.Map;
-import java.util.Optional;
 import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -15,7 +14,7 @@ public class Preloader {
     SingletonDB DB = SingletonDB.getInstance();
     public Preloader(){}
 
-    public void Load() throws FileNotFoundException, IOException, ParseException{
+    public void load() throws FileNotFoundException, IOException, ParseException{
         Object obj = new JSONParser().parse(new FileReader("books.json"));
         JSONObject jo = (JSONObject) obj;
 
@@ -34,10 +33,17 @@ public class Preloader {
                 pair = (Entry) itrAux.next();
                 String Category = ((String) pair.getValue());
 
-                BookCategory bookCategory = new BookCategory(Category);
-                Book book = new Book (title, author, bookCategory);
-                bookCategory.addBook(book);
+                BookCategory bookCategory = DB.getBookCategories(Category);
+                if(bookCategory != null){
+                    Book book = new Book (title, author, bookCategory);
+                    bookCategory.addBook(book);
+                }else{
+                    bookCategory = new BookCategory(Category);
+                    this.DB.addCategory(bookCategory);
+                }
 
+                Book book = new Book (title, author, bookCategory);
+                
                 Integer randomInt = ThreadLocalRandom.current().nextInt(1, 4);
 
                 for(Integer i = 0; i <= randomInt;i++){
@@ -46,7 +52,6 @@ public class Preloader {
                 }
 
                 this.DB.addBook(book);
-                this.DB.addCategory(bookCategory);
             }
         }
     }

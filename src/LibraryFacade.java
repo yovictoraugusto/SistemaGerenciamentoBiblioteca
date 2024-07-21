@@ -23,15 +23,15 @@ public class LibraryFacade {
 
     public Object searchBook(String title, String author, String category){
         if(title != null){
-            Book bk = (Book) mediator.CoordinateSearchBook(Optional.of(title), null, null);
+            Book bk = (Book) mediator.CoordinateSearchBook(Optional.of(title),Optional.empty(), Optional.empty());
             // Book bk = (Book) DB.searchBook(Optional.of(title), null, null);
             return bk;
         }
-        
         @SuppressWarnings("unchecked")
         ArrayList<Book> bks = (ArrayList<Book>) mediator.CoordinateSearchBook(Optional.ofNullable(title), Optional.ofNullable(author), Optional.ofNullable(category));
         //ArrayList<Book> bks = (ArrayList<Book>) DB.searchBook(Optional.ofNullable(title), Optional.ofNullable(author), Optional.ofNullable(category));
         return bks;
+        
     }
 
     public User searchUser(String nCelular){

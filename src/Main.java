@@ -1,16 +1,24 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Optional;
+
+import org.json.simple.parser.ParseException;
 
 public class Main {
-    public static void main(String[] args) {
-        BookCategory fiction = new BookCategory("Fiction");
-        BookCategory fantasy = new BookCategory("Fantasy");
-        BookCategory nonFiction = new BookCategory("Non-Fiction");
-        BookCategory history = new BookCategory("History");
+    public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
+        Preloader loader = new Preloader();
+        loader.load();
+        // BookCategory fiction = new BookCategory("Fiction");
+        // BookCategory fantasy = new BookCategory("Fantasy");
+        // BookCategory nonFiction = new BookCategory("Non-Fiction");
+        // BookCategory history = new BookCategory("History");
 
-        fiction.setSubcategories(fantasy);
-        nonFiction.setSubcategories(history);
+        // fiction.setSubcategories(fantasy);
+        // nonFiction.setSubcategories(history);
 
-        Book lotr = new Book("The Lord of the Rings", "J.R.R. Tolkien", fantasy);
-        Book sapiens = new Book("Sapiens", "Yuval Noah Harari", history);
+        // Book lotr = new Book("The Lord of the Rings", "J.R.R. Tolkien", fantasy);
+        // Book sapiens = new Book("Sapiens", "Yuval Noah Harari", history);
 
         // lotr.addCopy(new BookCopy("LOTR-1", lotr.getTitle())));
         // lotr.addCopy(new BookCopy("LOTR-2", lotr.getTitle()));
@@ -42,6 +50,13 @@ public class Main {
         //     System.out.println(example.getTitle());
         // }
         ExternalCatalogAdapter searchExternal = new ExternalCatalogAdapter();
+        
+        Book teste = (Book) db.searchBook(Optional.of("1984"), Optional.empty(), Optional.empty());
+        System.out.println(teste.getAuthor());
+
+        ArrayList<Book> teste2 = (ArrayList<Book>) LB.searchBook(null, "George Orwell", null);
+        System.out.println(teste2.get(0).getAuthor());
+
     }
 
 }
