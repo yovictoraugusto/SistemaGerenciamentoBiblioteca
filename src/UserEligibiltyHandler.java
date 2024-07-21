@@ -9,8 +9,6 @@ public class UserEligibiltyHandler{
         if(LoanedQuantity < limit){
             return true;
         }
-
-
         return false;
     }
 }
