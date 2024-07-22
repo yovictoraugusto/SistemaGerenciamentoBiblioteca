@@ -4,6 +4,13 @@ public class LoanLimitHandler{
     private Integer teacher_user = 10;
     private Integer employee_user = 8;
 
+    public LoanLimitHandler(){
+        this.comum_user = 3;
+        this.student_user = 5;
+        this.teacher_user = 10;
+        this.employee_user = 8;
+    }
+
     public void setComumUser(Integer n)
     {this.comum_user = n;}
 
@@ -30,14 +37,17 @@ public class LoanLimitHandler{
 
     public Integer getLimit(User user)
     {
-        if (user instanceof StudentUserType)
-        {return this.student_user;} 
-        else if (user instanceof TeacherUserType)
-        {return this.teacher_user;}
-        else if (user instanceof EmployeeUserType)
-        {return this.employee_user;}
-        else
-        {return this.comum_user;}
+        StudentUserType student = new StudentUserType(null, null, null);
+        TeacherUserType teacher = new TeacherUserType(null, null, null);
+        EmployeeUserType employee = new EmployeeUserType(null, null, null);
 
+        if (user.getClass() == student.getClass())
+        {return this.getStudentUser();} 
+        else if(user.getClass() == teacher.getClass())
+        {return this.getTeacherUser();}
+        else if (user.getClass() ==  employee.getClass())
+        {return this.getEmployeeUser();}
+        else
+        {return this.getComumUser();}
     }
 }

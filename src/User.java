@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class User {
-    public String name;
-    public String email;
-    public String celular;
-    public ArrayList<String> boxNotifications;
-    public ArrayList<BookCopy> loanedBookCopies;
+    private String name;
+    private String email;
+    private String celular;
+    private ArrayList<String> boxNotifications;
+    private ArrayList<BookCopy> loanedBookCopies;
 
     public User(String name, String email, String celular){
         this.name = name;
@@ -16,6 +16,8 @@ public class User {
     }
 
     public String getCelular(){return this.celular;}
+    public String getName(){return this.name;}
+    public String getEmail(){return this.email;}
 
     public Integer getLoanedQuantity(){
         return this.loanedBookCopies.size();
@@ -25,5 +27,9 @@ public class User {
         for (String notification : boxNotifications){
             System.out.println(notification);
         }
+    }
+
+    public void addNotification(String msg){
+        if(msg != null){this.boxNotifications.add(msg);}
     }
 }

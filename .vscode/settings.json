@@ -1,6 +1,6 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\otavi\\OneDrive\\Desktop\\Otávio\\VS_Code\\ProjOO\\ProjOO_retorno_greve\\json-simple-1.1.jar"
+        //"c:\\Users\\otavi\\OneDrive\\Desktop\\Otávio\\VS_Code\\ProjOO\\ProjOO_retorno_greve\\json-simple-1.1.jar"
     ]
 }

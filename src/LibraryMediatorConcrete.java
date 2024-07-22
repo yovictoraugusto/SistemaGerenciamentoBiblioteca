@@ -15,6 +15,7 @@ public class LibraryMediatorConcrete implements LibraryMediator {
             if (book != null){System.out.println("Book found!"); return book;}
         }
 
+        @SuppressWarnings("unchecked")
         ArrayList<Book> booksSearch = (ArrayList<Book>) DB.searchBook(title, author, category);
         if(booksSearch != null){
             System.out.println("Book found!");
@@ -32,7 +33,7 @@ public class LibraryMediatorConcrete implements LibraryMediator {
             System.out.println("Loan Approved!\n Return Date:" + availableBook.getReturnDate());
             notifier.setNotification("Is unavailable!\nBook:" + availableBook.getTitle() + "\tCopy: " + availableBook.getCopyID());
         }else{
-            System.out.println("Loan not Approved! :(");
+            System.out.println("Loan not Approved! :/");
         }
         return availableBook;
     }
@@ -51,7 +52,13 @@ public class LibraryMediatorConcrete implements LibraryMediator {
 
     @Override
     public User CoordinateSearchUser(String nCelular) {
-        return DB.searchUser(nCelular);
+        User user = DB.searchUser(nCelular);
+        if(user != null){
+            System.out.println("User Finded!");
+            return user;
+        }
+        System.out.println("User not finded!");
+        return null;
     }
 
     @Override

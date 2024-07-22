@@ -1,13 +1,15 @@
 public class UserEligibiltyHandler{
     public UserEligibiltyHandler(){}
-    private LoanLimitHandler limitHandler;
+    private LoanLimitHandler limitHandler = new LoanLimitHandler();
 
     public boolean verifyUser(User user){
-        Integer limit = limitHandler.getLimit(user);
-        Integer LoanedQuantity = user.getLoanedQuantity();
+        if(user != null){
+            Integer limit = limitHandler.getLimit(user);
+            Integer LoanedQuantity = user.getLoanedQuantity();
 
-        if(LoanedQuantity < limit){
-            return true;
+            if(LoanedQuantity < limit){
+                return true;
+            }
         }
         return false;
     }

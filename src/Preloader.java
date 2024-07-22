@@ -14,6 +14,7 @@ public class Preloader {
     SingletonDB DB = SingletonDB.getInstance();
     public Preloader(){}
 
+    @SuppressWarnings("rawtypes")
     public void load() throws FileNotFoundException, IOException, ParseException
     {
         Object obj = new JSONParser().parse(new FileReader("books.json"));

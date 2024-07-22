@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.List;
+
 public class BookCategory extends Category{
-    private List<Book> books;
+    private ArrayList<Book> books;
     
     public BookCategory(String category) {
         super(category);
@@ -12,11 +12,11 @@ public class BookCategory extends Category{
         books.add(book);
     }
     
-    public List<Book> getBooks() {
+    public ArrayList<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(ArrayList<Book> books) {
         this.books = books;
     }
     

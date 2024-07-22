@@ -14,7 +14,7 @@ public class Library {
 
         if(EligibilityHandler.verifyUser(user))
         {
-            Book book = (Book) DB.searchBook(Optional.of(Title), null, null);
+            Book book = (Book) DB.searchBook(Optional.of(Title), Optional.empty(), Optional.empty());
             BookAvailabilityHandler AvailabilityHandler = new BookAvailabilityHandler();
             BookCopy availableBook = AvailabilityHandler.verifyBook(book);
 

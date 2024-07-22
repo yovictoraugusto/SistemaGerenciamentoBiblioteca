@@ -4,11 +4,11 @@ import java.util.stream.Collectors;
 
 
 public class SingletonDB {
-    SingletonDB(){}
     private static SingletonDB instance;
     private ArrayList<Book> books = new ArrayList<Book>();
     public ArrayList<BookCategory> categories = new ArrayList<BookCategory>();
     private ArrayList<User> users = new ArrayList<User>();
+    SingletonDB(){}
 
     public static SingletonDB getInstance(){
         if (instance == null)
