@@ -14,7 +14,8 @@ public class Preloader {
     SingletonDB DB = SingletonDB.getInstance();
     public Preloader(){}
 
-    public void load() throws FileNotFoundException, IOException, ParseException{
+    public void load() throws FileNotFoundException, IOException, ParseException
+    {
         Object obj = new JSONParser().parse(new FileReader("books.json"));
         JSONObject jo = (JSONObject) obj;
 
@@ -24,7 +25,8 @@ public class Preloader {
         while (itr.hasNext())
         {
             Iterator itrAux = ((Map) itr.next()).entrySet().iterator();
-            while (itrAux.hasNext()){
+            while (itrAux.hasNext())
+            {
                 
                 Map.Entry pair = (Entry) itrAux.next();
                 String author = ((String) pair.getValue());
@@ -34,10 +36,13 @@ public class Preloader {
                 String Category = ((String) pair.getValue());
 
                 BookCategory bookCategory = DB.getBookCategories(Category);
-                if(bookCategory != null){
+                if(bookCategory != null)
+                {
                     Book book = new Book (title, author, bookCategory);
                     bookCategory.addBook(book);
-                }else{
+                }
+                else
+                {
                     bookCategory = new BookCategory(Category);
                     this.DB.addCategory(bookCategory);
                 }
@@ -46,7 +51,8 @@ public class Preloader {
                 
                 Integer randomInt = ThreadLocalRandom.current().nextInt(1, 4);
 
-                for(Integer i = 0; i <= randomInt;i++){
+                for(Integer i = 0; i <= randomInt;i++)
+                {
                     BookCopy bookCopy = new BookCopy(""+(randomInt+i)+"C", title);
                     book.addCopy(bookCopy);
                 }
