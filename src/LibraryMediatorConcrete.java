@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 public class LibraryMediatorConcrete implements LibraryMediator {
     SingletonDB DB = SingletonDB.getInstance();
@@ -31,6 +32,12 @@ public class LibraryMediatorConcrete implements LibraryMediator {
         BookCopy availableBook =  LB.loanBook(title, nCelular);
         if(availableBook != null){
             System.out.println("Loan Approved!\n Return Date:" + availableBook.getReturnDate());
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             notifier.setNotification("Is unavailable!\nBook:" + availableBook.getTitle() + "\tCopy: " + availableBook.getCopyID());
         }else{
             System.out.println("Loan not Approved! :/");

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class User {
     private String name;
@@ -23,9 +24,10 @@ public class User {
         return this.loanedBookCopies.size();
     }
 
-    public void readNotifications(){
+    public void readNotifications() throws InterruptedException{
         for (String notification : boxNotifications){
             System.out.println(notification);
+            TimeUnit.SECONDS.sleep(2);
         }
     }
 
