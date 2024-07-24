@@ -7,10 +7,10 @@ import org.json.simple.parser.ParseException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException, ParseException, InterruptedException {
-        Preloader loader = new Preloader();
+        //Preloader loader = new Preloader();
         Tester tests = new Tester();
         Scanner reader = new Scanner(System.in);
-        loader.load();
+        //loader.load();
         
         System.out.println("\n\nHi, Welcome to Generic Library System (GLS)!");
         TimeUnit.SECONDS.sleep(2);
